@@ -1,0 +1,49 @@
+{
+  "name": "ballot-initiativess",
+  "version": "1.0.0",
+  "description": "## Звонок от заказчика <details> <summary>Транскрипция звонка / сообщения</summary> <p> Привет! Я представляю РОИГ (Российское общество инициативных граждан). Наша команда нуждается в веб-портале для активных граждан в котором можно будет голосовать за различные народные инициативы, а также опубликовывать собственные. Мне посоветовали обратиться к разработчикам в Эльбрусе -- сказали, что вы сможете за 2-3 дня создать MVP-версию данного продукта.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app.js -e js,jsx,css,json --ignore sessions",
+    "dbr": "sequelize db:drop && sequelize db:create && node db/sync.js && sequelize db:seed:all"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yanakovas/Ballot-Initiativess.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yanakovas/Ballot-Initiativess/issues"
+  },
+  "homepage": "https://github.com/yanakovas/Ballot-Initiativess#readme",
+  "devDependencies": {
+    "eslint": "^8.28.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-react": "^7.31.11",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "nodemon": "^2.0.20"
+  },
+  "dependencies": {
+    "@babel/core": "^7.20.2",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-react": "^7.18.6",
+    "@babel/register": "^7.18.9",
+    "bcrypt": "^5.1.0",
+    "cookie-parser": "^1.4.6",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "morgan": "^1.10.0",
+    "pg": "^8.8.0",
+    "pg-hstore": "^2.3.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sequelize": "^6.25.7",
+    "sequelize-cli": "^6.5.2",
+    "session-file-store": "^1.5.0"
+  }
+}
