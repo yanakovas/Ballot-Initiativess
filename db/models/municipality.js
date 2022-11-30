@@ -17,9 +17,9 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Municipality.init({
-    municipality_name: {type:DataTypes.TEXT,
+    name: {type:DataTypes.TEXT,
       allowNull:false},
-      
+
     region_id: {type:DataTypes.INTEGER,
       allowNull:false},
   }, {
