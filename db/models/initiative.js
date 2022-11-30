@@ -35,10 +35,10 @@ module.exports = (sequelize, DataTypes) => {
     voting_deadline: {type:DataTypes.DATE,
     allowNull:false},
 
-    initiative_level: {type:DataTypes.TEXT,
+    level: {type:DataTypes.TEXT,
     allowNull:false},
 
-    initiative_is_active: {type:DataTypes.BOOLEAN,
+    is_active: {type:DataTypes.BOOLEAN,
     allowNull:false,
     defaultValue:true}
   }, {
