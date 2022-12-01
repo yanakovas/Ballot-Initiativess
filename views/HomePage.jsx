@@ -1,11 +1,14 @@
 const React = require('react');
 const Layout = require('./Layout');
+const Filter = require('./Filter');
 
 // React-компонент
 function HomePage({ user }) {
   return (
     <Layout title="Home Page" user={user}>
       <h1>My Web Site</h1>
+
+      <Filter />
 
       <a href="/notes">notes</a>
       <br />
