@@ -1,73 +1,20 @@
 const React = require('react');
+const CardView = require('./CardView');
 const Layout = require('./Layout');
 
 // React-компонент
-function HomePage({ user }) {
+function HomePage({ initiatives}) {
 return (
-<Layout title="Home Page" user={user}>
-  <div className='container'>  <button type= 'click' id='createCard'>Создать инициативу</button>
-    <h1 className='intro'>Все инициативы</h1>
-    <div className='cardsInitiativess'>
-      <div className='card'>
-        <div>Заголовок</div>
-        <div>Краткое описание</div>
-        <div>10 человек ЗА</div>
-        <div>Уровень: Район</div>
-        <button type='click' className='vote'>Проголосовать</button>
-         </div>
-         <div className='card'>
-        <div>Заголовок</div>
-        <div>Краткое описание</div>
-        <div>10 человек ЗА</div>
-        <div>Уровень: Район</div>
-        <button type='click' className='vote'>Проголосовать</button>
-         </div>
-         <div className='card'>
-        <div>Заголовок</div>
-        <div>Краткое описание</div>
-        <div>10 человек ЗА</div>
-        <div>Уровень: Район</div>
-        <button type='click' className='vote'>Проголосовать</button>
-         </div>
-         <div className='card'>
-        <div>Заголовок</div>
-        <div>Краткое описание</div>
-        <div>10 человек ЗА</div>
-        <div>Уровень: Район</div>
-        <button type='click' className='vote'>Проголосовать</button>
-         </div>
-         <div className='card'>
-        <div>Заголовок</div>
-        <div>Краткое описание</div>
-        <div>10 человек ЗА</div>
-        <div>Уровень: Район</div>
-        <button type='click' className='vote'>Проголосовать</button>
-         </div>
-         <div className='card'>
-        <div>Заголовок</div>
-        <div>Краткое описание</div>
-        <div>10 человек ЗА</div>
-        <div>Уровень: Район</div>
-        <button type='click' className='vote'>Проголосовать</button>
-         </div>
-         <div className='card'>
-        <div>Заголовок</div>
-        <div>Краткое описание</div>
-        <div>10 человек ЗА</div>
-        <div>Уровень: Район</div>
-        <button type='click' className='vote'>Проголосовать</button>
-         </div>
-         <div className='card'>
-        <div>Заголовок</div>
-        <div>Краткое описание</div>
-        <div>10 человек ЗА</div>
-        <div>Уровень: Район</div>
-        <button type='click' className='vote'>Проголосовать</button>
-         </div>
-    </div>
+<Layout title="Home Page">
+<div id='cards'>
+{initiatives.map((initiative) => (
+  <div className='card'>
+  <CardView key={initiative.id} title={initiative.title} text={initiative.text} level={initiative.level} />
   </div>
+))}
+</div>
 </Layout>
-);
+)
 }
 
 module.exports = HomePage;

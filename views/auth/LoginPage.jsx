@@ -14,13 +14,11 @@ function LoginPage({ user }) {
             id="exampleInputLogin1"
             aria-describedby="loginHelp"
             name="login"
+            placeholder="Введите email"
           />
         </div>
         <div className="mb-3">
-          <label
-            htmlFor="exampleInputPassword1"
-            className="form-label"
-          >
+          <label htmlFor="exampleInputPassword1" className="form-label">
             Password
           </label>
           <input
@@ -28,10 +26,11 @@ function LoginPage({ user }) {
             className="form-control"
             id="exampleInputPassword1"
             name="password"
+            placeholder="Введите пароль"
           />
         </div>
         <button type="submit" className="btn btn-primary">
-          Submit
+          Войти
         </button>
       </form>
     </Layout>
