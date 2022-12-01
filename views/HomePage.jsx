@@ -8,9 +8,7 @@ return (
 <Layout title="Home Page">
 <div id='cards'>
 {initiatives.map((initiative) => (
-  <div className='card'>
   <CardView key={initiative.id} title={initiative.title} text={initiative.text} level={initiative.level} />
-  </div>
 ))}
 </div>
 </Layout>
