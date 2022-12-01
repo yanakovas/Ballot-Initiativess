@@ -4,9 +4,9 @@ const React = require('react');
 
 function ButtonForCreate() {
   return (
-<button type="button" className="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Создать инициативу
-</button>
+        <button type="button" action="submit" className="btn btn-link btn-sm nav-item nav-link"  data-bs-toggle="modal" data-bs-target="#exampleModal">
+      Создать инициативу
+    </button>
 );
 }
 

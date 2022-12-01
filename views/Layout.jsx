@@ -1,6 +1,7 @@
 const React = require('react');
 const NavBar = require('./NavBar');
 
+
 function Layout({ title, children, user }) {
   return (
     <html lang="ru">
@@ -22,8 +23,10 @@ function Layout({ title, children, user }) {
       </head>
 
       <body>
-        <NavBar user={user} />
-        <div className="container">{children}</div>
+        <NavBar/>
+        <div className="container">
+        {children}
+        </div>
       </body>
     </html>
   );

@@ -14,21 +14,29 @@ function CreateInitiative() {
         
       <div className="mb-3">
     <label htmlFor="exampleInputEmail1" className="form-label form-label-sm">Заголовок:</label>
-    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
+    <input type="email" className="form-control"  required id="exampleInputEmail1" aria-describedby="emailHelp"/>
   </div>
   <div className="mb-3">
     <label htmlFor="exampleInputPassword1" className="form-label">Описание:</label>
-    <textarea  className="form-control" id="exampleInputPassword1"/>
+    <textarea  className="form-control" required id="exampleInputPassword1"/>
+  </div>
+
+  <div className="mb-3">
+    <label htmlFor="exampleInputPassword1" className="form-label">Уровень инициативы:</label>
+    <select className="form-control" id="exampleInputPassword1">
+    <option>Муниципальный</option>
+    <option>Региональный</option>
+    <option>Федеральный</option>
+    </select>
   </div>
 
   <div className="mb-3">
     <label htmlFor="exampleInputPassword1" className="form-label">Дата завершения:</label>
-    <input type="date" className="form-control" id="exampleInputPassword1"/>
+    <input type="date" className="form-control" required id="exampleInputPassword1"/>
   </div>
 
       </div>
       <div className="modal-footer">
-        <button type="button" className="btn btn-secondary btn-sm" data-bs-dismiss="modal">Отмена</button>
         <button type="button" className="btn btn-primary btn-sm">Создать</button>
       </div>
     </div>
