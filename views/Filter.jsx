@@ -16,8 +16,10 @@ function Filter() {
         <option value="Муниципальный">Муниципальный</option>
       </select>
 
-      <select className="form-select form-select-sm mb-2" id="section">
-        <option selected>По разделу</option>
+      <select className="form-select form-select-sm mb-2">
+        <option selected id="section">
+          По разделу
+        </option>
         <option value="Социальная">Социальная Защита</option>
         <option value="Транспорт и дороги">Транспорт и дороги</option>
         <option value="Образование и наука">Образование и наука</option>
