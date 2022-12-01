@@ -3,20 +3,71 @@ const Layout = require('./Layout');
 
 // React-компонент
 function HomePage({ user }) {
-  return (
-    <Layout title="Home Page" user={user}>
-      <h1>My Web Site</h1>
-
-      <a href="/notes">notes</a>
-      <br />
-
-      <a href="#" id="how-many-notes">
-        Сколько у меня заметок?
-      </a>
-
-      <script src="/js/homePage.js" defer />
-    </Layout>
-  );
+return (
+<Layout title="Home Page" user={user}>
+  <div className='container'>  <button type= 'click' id='createCard'>Создать инициативу</button>
+    <h1 className='intro'>Все инициативы</h1>
+    <div className='cardsInitiativess'>
+      <div className='card'>
+        <div>Заголовок</div>
+        <div>Краткое описание</div>
+        <div>10 человек ЗА</div>
+        <div>Уровень: Район</div>
+        <button>Проголосовать</button>
+         </div>
+         <div className='card'>
+        <div>Заголовок</div>
+        <div>Краткое описание</div>
+        <div>10 человек ЗА</div>
+        <div>Уровень: Район</div>
+        <button>Проголосовать</button>
+         </div>
+         <div className='card'>
+        <div>Заголовок</div>
+        <div>Краткое описание</div>
+        <div>10 человек ЗА</div>
+        <div>Уровень: Район</div>
+        <button>Проголосовать</button>
+         </div>
+         <div className='card'>
+        <div>Заголовок</div>
+        <div>Краткое описание</div>
+        <div>10 человек ЗА</div>
+        <div>Уровень: Район</div>
+        <button>Проголосовать</button>
+         </div>
+         <div className='card'>
+        <div>Заголовок</div>
+        <div>Краткое описание</div>
+        <div>10 человек ЗА</div>
+        <div>Уровень: Район</div>
+        <button>Проголосовать</button>
+         </div>
+         <div className='card'>
+        <div>Заголовок</div>
+        <div>Краткое описание</div>
+        <div>10 человек ЗА</div>
+        <div>Уровень: Район</div>
+        <button>Проголосовать</button>
+         </div>
+         <div className='card'>
+        <div>Заголовок</div>
+        <div>Краткое описание</div>
+        <div>10 человек ЗА</div>
+        <div>Уровень: Район</div>
+        <button>Проголосовать</button>
+         </div>
+         <div className='card'>
+        <div>Заголовок</div>
+        <div>Краткое описание</div>
+        <div>10 человек ЗА</div>
+        <div>Уровень: Район</div>
+        <button>Проголосовать</button>
+         </div>
+    </div>
+  </div>
+</Layout>
+);
 }
 
 module.exports = HomePage;

@@ -1,0 +1,56 @@
+
+.container h1 {
+    margin-top: 40px;
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+}
+.card {
+    height: 350px;
+    width: 300px;
+    border:1px solid black;
+    margin-top: 70px;
+    align-items: center;
+    display: flex;
+    align-items:center;
+    justify-content: space-around;
+}
+
+
+
+.cardsInitiativess {
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center;
+    flex-wrap: wrap;
+
+  }
+
+body {
+    background-color:rgb(57, 57, 192)
+}
+
+#createCard {
+    float: right;
+    margin-top: 13px;
+}
+
+.card {
+    animation: changeColor 20s infinite;
+}
+@keyframes changeColor {
+    0% {
+      background-color: blue;
+    }
+    100% {
+      background-color: rgb(0, 255, 242);
+    }
+}
+
+/* .cardsInitiativess{
+    position: relative;
+    width:100px;
+    height:100px;
+    background-color:red;
+    opacity:0;
+
+} */

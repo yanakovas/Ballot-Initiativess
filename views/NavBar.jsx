@@ -5,7 +5,7 @@ function NavBar({ user }) {
     <nav className="navbar navbar-dark navbar-expand-lg bg-primary">
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
-          My Notes Site
+          Твой вклад
         </a>
         <button
           className="navbar-toggler"
@@ -20,27 +20,28 @@ function NavBar({ user }) {
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <a className="nav-link" href="/">
-                Home
+                Регистрация
               </a>
-            </li>
-            <li className="nav-item">
+            </li> */}
+            {/* <li className="nav-item">
               <a className="nav-link" href="/notes">
-                Notes
+                Вход
               </a>
-            </li>
+            </li> */}
+            
             {!user && (
               <li className="nav-item">
                 <a className="nav-link" href="/auth/login">
-                  Login
+                  Вход
                 </a>
               </li>
             )}
             {!user && (
               <li className="nav-item">
                 <a className="nav-link" href="/auth/register">
-                  Register
+                  Регистрация
                 </a>
               </li>
             )}
