@@ -13,56 +13,56 @@ return (
         <div>Краткое описание</div>
         <div>10 человек ЗА</div>
         <div>Уровень: Район</div>
-        <button>Проголосовать</button>
+        <button type='click' className='vote'>Проголосовать</button>
          </div>
          <div className='card'>
         <div>Заголовок</div>
         <div>Краткое описание</div>
         <div>10 человек ЗА</div>
         <div>Уровень: Район</div>
-        <button>Проголосовать</button>
+        <button type='click' className='vote'>Проголосовать</button>
          </div>
          <div className='card'>
         <div>Заголовок</div>
         <div>Краткое описание</div>
         <div>10 человек ЗА</div>
         <div>Уровень: Район</div>
-        <button>Проголосовать</button>
+        <button type='click' className='vote'>Проголосовать</button>
          </div>
          <div className='card'>
         <div>Заголовок</div>
         <div>Краткое описание</div>
         <div>10 человек ЗА</div>
         <div>Уровень: Район</div>
-        <button>Проголосовать</button>
+        <button type='click' className='vote'>Проголосовать</button>
          </div>
          <div className='card'>
         <div>Заголовок</div>
         <div>Краткое описание</div>
         <div>10 человек ЗА</div>
         <div>Уровень: Район</div>
-        <button>Проголосовать</button>
+        <button type='click' className='vote'>Проголосовать</button>
          </div>
          <div className='card'>
         <div>Заголовок</div>
         <div>Краткое описание</div>
         <div>10 человек ЗА</div>
         <div>Уровень: Район</div>
-        <button>Проголосовать</button>
+        <button type='click' className='vote'>Проголосовать</button>
          </div>
          <div className='card'>
         <div>Заголовок</div>
         <div>Краткое описание</div>
         <div>10 человек ЗА</div>
         <div>Уровень: Район</div>
-        <button>Проголосовать</button>
+        <button type='click' className='vote'>Проголосовать</button>
          </div>
          <div className='card'>
         <div>Заголовок</div>
         <div>Краткое описание</div>
         <div>10 человек ЗА</div>
         <div>Уровень: Район</div>
-        <button>Проголосовать</button>
+        <button type='click' className='vote'>Проголосовать</button>
          </div>
     </div>
   </div>

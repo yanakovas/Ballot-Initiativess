@@ -20,16 +20,7 @@ function NavBar({ user }) {
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
-            {/* <li className="nav-item">
-              <a className="nav-link" href="/">
-                Регистрация
-              </a>
-            </li> */}
-            {/* <li className="nav-item">
-              <a className="nav-link" href="/notes">
-                Вход
-              </a>
-            </li> */}
+
             
             {!user && (
               <li className="nav-item">
