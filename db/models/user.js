@@ -26,7 +26,7 @@ module.exports = (sequelize, DataTypes) => {
       type:DataTypes.TEXT,
       allowNull:false},
 
-    email: {
+    login: {
       type:DataTypes.TEXT,
       allowNull:false,
       unique:true},
