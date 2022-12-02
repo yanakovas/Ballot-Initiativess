@@ -12,7 +12,6 @@ mainRouter.get('/', async (req, res) => {
             ['id', 'DESC'],
         ],
     });
-    console.log(initiatives);
     res.renderComponent(HomePage, {
         initiatives,
     });
@@ -21,9 +20,5 @@ mainRouter.get('/', async (req, res) => {
     res.sendStatus(500)
 }
 })
-  // const { userId } = req.session;
-  // const user = userId && (await User.findByPk(Number(userId)));
-//   res.renderComponent(HomePage, {});
-// });
 
 module.exports = mainRouter;
