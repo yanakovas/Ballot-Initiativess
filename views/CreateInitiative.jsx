@@ -14,7 +14,7 @@ function CreateInitiative() {
         
       <div className="mb-3">
     <label htmlFor="exampleInputEmail1" className="form-label form-label-sm">Заголовок:</label>
-    <input type="email" className="form-control"  required id="exampleInputEmail1" aria-describedby="emailHelp"/>
+    <input type="text" className="form-control"  required id="exampleInputEmail1" aria-describedby="emailHelp"/>
   </div>
   <div className="mb-3">
     <label htmlFor="exampleInputPassword1" className="form-label">Описание:</label>
@@ -37,7 +37,7 @@ function CreateInitiative() {
 
       </div>
       <div className="modal-footer">
-        <button type="button" className="btn btn-primary btn-sm">Создать</button>
+        <button type="button" className="btn btn-primary btn-sm js-create-initiative-button">Создать</button>
       </div>
     </div>
   </div>

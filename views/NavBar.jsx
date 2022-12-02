@@ -63,6 +63,7 @@ function Navbar({ user }) {
               <span>
               <ButtonForCreate/>
               <CreateInitiative/>
+              <script src="/js/createInitiative.js" defer />
               </span>
             )}
           </ul>
