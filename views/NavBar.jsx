@@ -1,8 +1,11 @@
 const React = require('react');
 
-function NavBar({ user }) {
+const ButtonForCreate = require('./ButtonForCreate')
+const CreateInitiative = require('./CreateInitiative');
+
+function Navbar({ user }) {
   return (
-    <nav className="navbar navbar-dark navbar-expand-lg bg-primary">
+    <nav className="navbar navbar-dark navbar-expand-lg bg-primary" style={{boxSizing:"border-box"}}>
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
           My Notes Site
@@ -56,6 +59,12 @@ function NavBar({ user }) {
                 </a>
               </li>
             )}
+            {user && (
+              <span>
+              <ButtonForCreate/>
+              <CreateInitiative/>
+              </span>
+            )}
           </ul>
         </div>
       </div>
@@ -63,4 +72,4 @@ function NavBar({ user }) {
   );
 }
 
-module.exports = NavBar;
+module.exports = Navbar;
