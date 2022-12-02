@@ -1,3 +1,4 @@
+
 const { sequelize } = require('../models');
 
 // создаёт новую таблицу если её нет в БД
