@@ -4,7 +4,7 @@ const React = require('react');
 
 function ButtonForCreate() {
   return (
-        <button type="button" action="submit" className="btn btn-link btn-sm nav-item nav-link"  data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <button type="button" action="submit" className="btn btn-link btn-sm nav-item nav-link"  data-bs-toggle="modal" data-bs-target="#createModal">
       Создать инициативу
     </button>
 );
