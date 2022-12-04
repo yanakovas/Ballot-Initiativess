@@ -1,7 +1,8 @@
 const initiativeApiRouter = require('express').Router();
+
 const { Initiative } = require('../../db/models');
 
-const HomePage = require('../../views/HomePage');
+const CardView = require('../../views/CardView');
 
 initiativeApiRouter.delete('/:id', async (req, res) => {
   const { userId } = req.session;
@@ -18,6 +19,18 @@ initiativeApiRouter.delete('/:id', async (req, res) => {
   } else {
     res.json({ success: true });
   }
+});
+
+initiativeApiRouter.post('/', async (req, res) => {
+  const { userId } = req.session;
+
+  const {title, text, votingDeadline, level} = req.body
+  
+  await Initiative.create({
+    title, text, level, user_id:userId, voting_deadline: votingDeadline,
+  });
+  // title={initiative.title} text={initiative.text} level={initiative.level}
+  res.renderComponent(CardView, {title, text, level}, {doctype:false})
 });
 
 module.exports = initiativeApiRouter;

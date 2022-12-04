@@ -32,8 +32,7 @@ module.exports = (sequelize, DataTypes) => {
       unique:true},
 
     registration_id: {
-      type:DataTypes.INTEGER,
-      allowNull:false}
+      type:DataTypes.INTEGER}
 
   }, {
     sequelize,

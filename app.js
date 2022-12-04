@@ -5,14 +5,18 @@ const expressConfig = require('./config/express');
 const authRouter = require('./routes/pages/auth.routes');
 const mainRouter = require('./routes/pages/main.routes');
 const filterRouter = require('./routes/pages/main.routes');
+const initiativeApiRouter = require('./routes/api/initiative.routes');
 
 const app = express();
+  
 
 expressConfig(app);
 
 
 app.use(mainRouter);
-app.use(filterRouter);
+app.use('/api', initiativeApiRouter);
+app.use('/api', filterRouter);
+
 app.use('/auth', authRouter);
 
 
