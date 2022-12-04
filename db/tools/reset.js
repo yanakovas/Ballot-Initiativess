@@ -1,4 +1,4 @@
-const { sequelize } = require('./models');
+const { sequelize } = require('../models');
 
 // удаляем все таблицы, а потом создаём новые
 async function main() {
