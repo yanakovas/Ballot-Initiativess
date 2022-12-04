@@ -1,8 +1,8 @@
 const React = require('react')
 
-module.exports = function CardView ({title,text,level}) {
+module.exports = function CardView ({title,text,level, id}) {
 return (
-<div id="cards">
+<div id="cards" data-initiativeId = {`${id}`} >
   <div className="topicList">
     <div className="card center">
       <div className="front">
