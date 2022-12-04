@@ -8,6 +8,11 @@ const process = require('process');
 const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
 const config = require(`${__dirname  }/../config/database.json`)[env];
+config.dialectOptions = {
+  statement_timeout: 1000000,
+  idle_in_transaction_session_timeout: 1000000
+}
+
 const db = {};
 
 let sequelize;

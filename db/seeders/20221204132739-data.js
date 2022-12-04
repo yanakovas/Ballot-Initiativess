@@ -2,7 +2,7 @@
 const bcrypt = require('bcrypt')
 const fs = require('fs').promises;
 const path = require('path');
-const districtRelations = require('../tools/districtRelations')
+const {districtRelations, objOfRelations} = require('../tools/districtRelations')
 const {Initiative, User, FederalDistrict, Municipality, Region } = require('../models')
 
 module.exports = {
@@ -125,15 +125,16 @@ module.exports = {
     .map((values)=>({municipalityName:values[3], regionName:values[7]}))
     // console.log(valuePairs)
     const filteredPairs = valuePairs.filter((obj1)=>districtRelations.some((obj2)=>obj2.Regions.some((obj3)=>obj3.name === obj1.regionName))) 
-
-    const result = await filteredPairs.map(async (pair)=>{
+    filteredPairs.pop()
+    const result = filteredPairs.map(async (pair)=>{
       const {regionName, municipalityName} = pair;
-      const region = await Region.findOne({where:{name:regionName}})
-      console.log(region)
-      const municipality = await Municipality.create({name:municipalityName, region_id:region.id})
-      return municipality.s
+      
+      const municipality = await Municipality.create({name:municipalityName, region_id:objOfRelations[regionName]},{raw:true})
+      console.log({regionName, municipalityName})
+      console.log(municipality)
+      return municipality
     })
-    const info = await Promise.all(result)
+    await Promise.all(result)
   },
 
   async down (queryInterface, Sequelize) {
