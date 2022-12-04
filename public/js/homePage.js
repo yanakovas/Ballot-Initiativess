@@ -35,23 +35,22 @@ document.querySelector('#status').addEventListener('change', async (event) => {
 });
 
 document.getElementById('cards').addEventListener('click', async (event) => {
-  if (event.target.classList.contains('remove-note')) {
+  if (event.target.classList.contains('continer')) {
     event.preventDefault();
 
-    // Сама кнопка лежит в event.target
     const removeButtonEl = event.target;
-    // Находим ближайшего родителя с классом .note
-    const note = removeButtonEl.closest('.note');
-    // В dataset лежат все данные, которые мы прописали в data-атрибуты
-    const id = Number(note.dataset.id);
 
-    const response = await fetch(`/api/notes/${id}`, {
+    const card = removeButtonEl.closest('.card');
+
+    const id = Number(card.dataset.id);
+
+    const response = await fetch(`/api/${id}`, {
       method: 'DELETE',
     });
 
     // проверка на ошибки
     if (response.ok) {
-      note.remove();
+      card.remove();
     } else {
       const message = await response.text();
       alert(message);

@@ -4,7 +4,7 @@ const Layout = require('../Layout');
 function RegisterPage({ user }) {
   return (
     <Layout user={user}>
-      <form id="register-form">
+      <form id="register-form" action="/auth/register" method="POST">
         <div className="mb-3">
           <label htmlFor="InputFullname" className="form-label">
             ФИО
@@ -57,8 +57,6 @@ function RegisterPage({ user }) {
           Зарегистрироваться
         </button>
       </form>
-
-      <script src="/js/registerPage.js" />
     </Layout>
   );
 }

@@ -1,7 +1,6 @@
 const React = require('react');
 const NavBar = require('./NavBar');
 
-
 function Layout({ title, children, user }) {
   return (
     <html lang="ru">
@@ -19,15 +18,12 @@ function Layout({ title, children, user }) {
           integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
           crossOrigin="anonymous"
         />
-        <script src='js/script.js' />
-        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <link rel="stylesheet" type="text/css" href="/css/style.css" />
       </head>
 
       <body>
-        <NavBar/>
-        <div className="container">
-        {children}
-        </div>
+        <NavBar />
+        <div className="container">{children}</div>
       </body>
     </html>
   );

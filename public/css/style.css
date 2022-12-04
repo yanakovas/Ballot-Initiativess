@@ -1,73 +1,70 @@
 .container h1 {
-    margin-top: 40px;
-    font-family: 'Times New Roman', Times, serif;
-    color: white;
+  margin-top: 40px;
+  font-family: 'Times New Roman', Times, serif;
+  color: rgb(0, 0, 0);
 }
- #cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin-top: 100px;
-}  
-
+#cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 100px;
+}
 
 .front {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    background-size: contain;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-size: contain;
 }
 
 .front,
 .back {
-    width: 300px;
-    height: 300px;
-    overflow: hidden;
-    backface-visibility: hidden;
-    position: absolute;
-    flex-wrap: wrap;
-    transition: transform .6s linear;
-    border-radius: 30px;
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+  flex-wrap: wrap;
+  transition: transform 0.6s linear;
+  border-radius: 30px;
 }
 
-
-
 .front {
-    transform: perspective(600px) rotateY(0deg);
+  transform: perspective(600px) rotateY(0deg);
 }
 
 .back {
-    transform: perspective(600px) rotateY(180deg);
-    background: url("/image/back.jpg");
-    background-size: contain;
+  transform: perspective(600px) rotateY(180deg);
+  background: url('/image/back.jpg');
+  background-size: contain;
 }
-.card:hover>.front {
-    transform: perspective(600px) rotateY(-180deg);
+.card:hover > .front {
+  transform: perspective(600px) rotateY(-180deg);
 }
 
-.card:hover>.back {
-    transform: perspective(600px) rotateY(0deg);
+.card:hover > .back {
+  transform: perspective(600px) rotateY(0deg);
 }
 
 .center {
-    height: 0 !important;
-    border: none !important;
+  height: 0 !important;
+  border: none !important;
 }
 
 .card {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    cursor: pointer;
-    width: 300px;
-    height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  cursor: pointer;
+  width: 300px;
+  height: 300px;
 }
 .back-content {
-    width: 100%;
-    margin-top: 10px;
-    text-align: center;
-    color: #333333;
-    vertical-align: middle
+  width: 100%;
+  margin-top: 10px;
+  text-align: center;
+  color: #333333;
+  vertical-align: middle;
 }

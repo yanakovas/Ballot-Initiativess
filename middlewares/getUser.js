@@ -6,6 +6,6 @@ module.exports = async function getUser(req, res, next) {
   const user = userId && (await User.findByPk(userId));
   // теперь если пользователь залогинен, то в он будет лежать в req.user
   res.locals.user = user;
-
+  console.log(user);
   next();
 };

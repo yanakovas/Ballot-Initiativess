@@ -1,8 +1,6 @@
 const initiativeApiRouter = require('express').Router();
 const { Initiative } = require('../../db/models');
 
-const HomePage = require('../../views/HomePage');
-
 initiativeApiRouter.delete('/:id', async (req, res) => {
   const { userId } = req.session;
 
