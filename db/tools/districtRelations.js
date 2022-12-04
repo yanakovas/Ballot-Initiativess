@@ -1,6 +1,9 @@
 /* eslint-disable camelcase */
 const path = require('path');
 const fs = require('fs').promises;
+const FederalDistrict = require('../models')
+const Region = require('../models')
+const Municipality = require('../models')
 
 
 // const data = await (await fs.readFile(path.join(__dirname,'db/mun_obr.csv'),'utf-8'))
@@ -17,7 +20,7 @@ const fs = require('fs').promises;
 // const regions = '';
 
 
-const districtReltions = [
+const districtRelations = [
     {name: 'Центральный федеральный округ',
     Regions:[{
       name:'Белгородская область' 
@@ -295,45 +298,21 @@ const districtReltions = [
     }
   ]
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   async function main(){
     const data = await ( fs.readFile(path.join(__dirname,'/mun_obr.csv'),'utf-8'))
-    data.split('\n')
-    .shift();
-    console.log(data)
-    data
+    const valuePairs = data.split('\n')
     .map((row)=>row.split(';'))
     .map((values)=>({municipalityName:values[3], regionName:values[7]}))
-    .array.filter((pairOfValues)=>
-      districtReltions.some((district)=>
-      district.some(()=>
-      district.Regions.some((region)=>
-      region.name===pairOfValues[0]))))
-    console.log(data)
+    // console.log(valuePairs)
+    const filteredPairs = valuePairs.filter((obj1)=>districtRelations.some((obj2)=>obj2.Regions.some((obj3)=>obj3.name === obj1.regionName))) 
+    const obj = {}
+    filteredPairs.map((pair)=>{
+
+    })
+    // console.log(filteredPairs)
 }
-main()
 
 
 
 
-  module.exports = districtReltions;
+  module.exports = districtRelations;
