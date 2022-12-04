@@ -8,7 +8,7 @@ return (
 <Layout title="Home Page">
 <div id='cards'>
 {initiatives.map((initiative) => (
-  <CardView key={initiative.id} title={initiative.title} text={initiative.text} level={initiative.level} />
+  <CardView key={initiative.id} title={`${initiative.title}`} text={initiative.text} level={initiative.level} id={initiative.id}/>
 ))}
 </div>
 </Layout>
