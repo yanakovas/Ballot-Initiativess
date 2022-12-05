@@ -4,7 +4,6 @@ const Layout = require('./Layout');
 const Filter = require('./Filter');
 
 // React-компонент
-
 function HomePage({ initiatives }) {
   return (
     <Layout title="Home Page">

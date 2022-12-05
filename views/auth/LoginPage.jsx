@@ -15,6 +15,7 @@ function LoginPage({ user }) {
             aria-describedby="loginHelp"
             name="login"
             placeholder="Введите email"
+            required
           />
         </div>
         <div className="mb-3">
@@ -27,6 +28,7 @@ function LoginPage({ user }) {
             id="exampleInputPassword1"
             name="password"
             placeholder="Введите пароль"
+            required
           />
         </div>
         <button type="submit" className="btn btn-primary">

@@ -11,8 +11,13 @@ module.exports = function CardView({ id, title, text, level }) {
             <p className="card-text">
               <small className="text-muted">{level}</small>
             </p>
-            <button className="btn btn-primary">Проголосовать</button>
-          </div>
+            <div id='for'>
+            <button className="btn btn-primary">За</button>
+            </div>
+            <div id='against'>
+            <button className="btn btn-primary">Против</button>
+            </div>
+         </div>
         </div>
 
         <div className="back">
@@ -23,20 +28,6 @@ module.exports = function CardView({ id, title, text, level }) {
         </div>
       </div>
     </div>
-  );
-};
-
-{
-  /* <div className="card mb-3" style={{maxWidth: "540px"}}>
-  <div className="row g-0 card">
-    <div className="col-md-8">
-      <div className="card-body">
-        <h5 className="card-title">{title}</h5>
-        <p className="card-text">{text}.</p>
-        <p className="card-text"><small className="text-muted">{level}</small></p>
-        <button className='btn btn-primary'>Проголосовать</button>
-      </div>
     </div>
-  </div>
-</div> */
+  )
 }

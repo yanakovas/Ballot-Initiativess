@@ -57,3 +57,42 @@ document.getElementById('cards').addEventListener('click', async (event) => {
     }
   }
 });
+
+document.querySelector('#for').addEventListener('click', async (event) => {
+  const { value } = event.target;
+  const button = event.target;
+  const card = button.closest('.topicList');
+
+  const id = Number(card.dataset.id);
+
+  const response = await fetch('/vote', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ value, id }),
+  });
+  await response.json();
+  const voteFor = document.getElementById('vote_for');
+  voteFor.innerText = voteFor.value + 1;
+});
+
+document.querySelector('#against').addEventListener('click', async (event) => {
+  const { value } = event.target;
+  const button = event.target;
+  const card = button.closest('.topicList');
+
+  const id = Number(card.dataset.id);
+
+  const response = await fetch('/vote', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ value, id }),
+  });
+  await response.json();
+
+  const voteAgainst = document.getElementById('vote_against');
+  voteAgainst.innerText = voteAgainst.value + 1;
+});

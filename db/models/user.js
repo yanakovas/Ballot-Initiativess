@@ -32,6 +32,7 @@ module.exports = (sequelize, DataTypes) => {
         unique: true,
       },
 
+<<<<<<< HEAD
       registration_id: {
         type: DataTypes.INTEGER,
       },
@@ -41,5 +42,14 @@ module.exports = (sequelize, DataTypes) => {
       modelName: 'User',
     }
   );
+=======
+    registration_id: {
+      type:DataTypes.INTEGER}
+
+  }, {
+    sequelize,
+    modelName: 'User',
+  });
+>>>>>>> db71da2f9a1d3160651811e3464317835acd1bd7
   return User;
 };

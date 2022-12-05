@@ -5,6 +5,7 @@ module.exports = {
     es2021: true,
     node: true,
   },
+  globals: { bootstrap: true },
   extends: ['plugin:react/recommended', 'airbnb', 'prettier'],
   overrides: [],
   parserOptions: {
