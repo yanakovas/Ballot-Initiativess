@@ -25,5 +25,4 @@ function HomePage({ initiatives }) {
     </Layout>
   );
 }
-
 module.exports = HomePage;

@@ -1,6 +1,9 @@
 /* eslint-disable camelcase */
 const path = require('path');
 const fs = require('fs').promises;
+const FederalDistrict = require('../models')
+const Region = require('../models')
+const Municipality = require('../models')
 
 
 // const data = await (await fs.readFile(path.join(__dirname,'db/mun_obr.csv'),'utf-8'))
@@ -17,7 +20,7 @@ const fs = require('fs').promises;
 // const regions = '';
 
 
-const districtReltions = [
+const districtRelations = [
     {name: 'Центральный федеральный округ',
     Regions:[{
       name:'Белгородская область' 
@@ -295,45 +298,111 @@ const districtReltions = [
     }
   ]
 
+  // async function main(){
+  //   const data = await ( fs.readFile(path.join(__dirname,'/mun_obr.csv'),'utf-8'))
+  //   const valuePairs = data.split('\n')
+  //   .map((row)=>row.split(';'))
+  //   .map((values)=>({municipalityName:values[3], regionName:values[7]}))
+  //   // console.log(valuePairs)
+  //   const filteredPairs = valuePairs.filter((obj1)=>districtRelations.some((obj2)=>obj2.Regions.some((obj3)=>obj3.name === obj1.regionName))) 
+  //   const obj = {}
+  //   filteredPairs.map((pair)=>{
 
+  //   })
+    // console.log(filteredPairs)
+// }
+// let i = 1
+//   function trans(){
+//     const obj = {};
+//     const arr = districtRelations.map((dist)=>{
+//       // eslint-disable-next-line no-return-assign
+//     dist.Regions.forEach((obj1)=>obj[obj1.name]=i)
+//     i+=1
+//   }
+//     )
+//     console.log(obj)
+//   }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  async function main(){
-    const data = await ( fs.readFile(path.join(__dirname,'/mun_obr.csv'),'utf-8'))
-    data.split('\n')
-    .shift();
-    console.log(data)
-    data
-    .map((row)=>row.split(';'))
-    .map((values)=>({municipalityName:values[3], regionName:values[7]}))
-    .array.filter((pairOfValues)=>
-      districtReltions.some((district)=>
-      district.some(()=>
-      district.Regions.some((region)=>
-      region.name===pairOfValues[0]))))
-    console.log(data)
+//   trans()
+const objOfRelations ={
+  'Белгородская область': 1,
+  'Брянская область': 1,
+  'Владимирская область': 1,
+  'Воронежская область': 1,
+  'Ивановская область': 2,
+  'Калужская область': 1,
+  'Костромская область': 1,
+  'Курская область': 1,
+  'Липецкая область': 1,
+  'Московская область': 1,
+  'Орловская область': 1,
+  'Рязанская область': 1,
+  'Тамбовская область': 1,
+  'Тверская область': 1,
+  'Тульская область': 1,
+  'Ярославская область': 1,
+  'Республика Адыгея': 2,
+  'Республика Калмыкия': 2,
+  'Краснодарский край': 2,
+  'Астраханская область': 2,
+  'Ростовская область': 2,
+  'Республика Карелия': 3,
+  'Республика Коми': 3,
+  'Архангельская область': 3,
+  'Вологодская область': 3,
+  'Калининградская область': 3,
+  'Ленинградская область': 3,
+  'Мурманская область': 3,
+  'Новгородская область': 3,
+  'Псковская область': 3,
+  'Город федерального значения Санкт-Петербург': 3,
+  'Ненецкий автономный округ': 3,
+  'Республика Саха': 4,
+  'Камчатский край': 4,
+  'Приморский край': 4,
+  'Хабаровский край': 4,
+  'Амурская область': 4,
+  'Магаданская область': 4,
+  'Сахалинская область': 4,
+  'Еврейская автономная область': 4,
+  'Чукотский автономный округ': 4,
+  'Республика Алтай': 5,
+  'Республика Бурятия': 5,
+  'Республика Тыва': 5,
+  'Республика Хакасия': 5,
+  'Алтайский край': 5,
+  'Забайкальский край': 5,
+  'Красноярский край': 5,
+  'Иркутская область': 5,
+  'Кемеровская область': 5,
+  'Новосибирская область': 5,
+  'Омская область': 5,
+  'Томская область': 5,
+  'Курганская область': 6,
+  'Свердловская область': 6,
+  'Тюменская область': 6,
+  'Челябинская область': 6,
+  'Ямало-Ненецкий автономный округ': 6,
+  'Республика Башкортостан': 7,
+  'Республика Марий Эл': 7,
+  'Республика Мордовия': 7,
+  'Республика Татарстан': 7,
+  'Удмуртская Республика': 7,
+  'Чувашская Республика': 7,
+  'Кировская область': 7,
+  'Нижегородская область': 7,
+  'Оренбургская область': 7,
+  'Пензенская область': 7,
+  'Пермский край': 7,
+  'Самарская область': 7,
+  'Саратовская область': 7,
+  'Ульяновская область': 7,
+  'Республика Дагестан': 8,
+  'Республика Ингушетия': 8,
+  'Кабардино-Балкарская Республика': 8,
+  'Карачаево-Черкесская Республика': 8,
+  'Республика Северная Осетия — Алания': 8,
+  'Чеченская Республика': 8,
+  'Ставропольский край': 8
 }
-main()
-
-
-
-
-  module.exports = districtReltions;
+  module.exports = {objOfRelations, districtRelations};

@@ -65,7 +65,7 @@ document.querySelector('#for').addEventListener('click', async (event) => {
 
   const id = Number(card.dataset.id);
 
-  const response = await fetch('/vote', {
+  const response = await fetch('/success', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -84,7 +84,7 @@ document.querySelector('#against').addEventListener('click', async (event) => {
 
   const id = Number(card.dataset.id);
 
-  const response = await fetch('/vote', {
+  const response = await fetch('/success', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
