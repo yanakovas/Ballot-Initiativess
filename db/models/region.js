@@ -12,8 +12,8 @@ module.exports = (sequelize, DataTypes) => {
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
-    static associate({Federal_district, Municipality}) {
-      Region.Federal_district = Region.belongsTo(Federal_district,{foreignKey:"federal_district_id"});
+    static associate({FederalDistrict, Municipality}) {
+      Region.FederalDistrict = Region.belongsTo(FederalDistrict,{foreignKey:"federal_district_id"});
       Region.Municipalities = Region.hasMany(Municipality,{foreignKey:"region_id"});
     }
   }

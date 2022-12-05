@@ -5,23 +5,23 @@ const {
 } = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
-  class Federal_district extends Model {
+  class FederalDistrict extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
     static associate({Region}) {
-      Federal_district.Regions = Federal_district.hasMany(Region,{foreignKey:"federal_district_id"})
+      FederalDistrict.Regions = FederalDistrict.hasMany(Region,{foreignKey:"federal_district_id"})
     }
   }
-  Federal_district.init({
+  FederalDistrict.init({
     name: {
       type:DataTypes.TEXT,
       allowNull:false}
   }, {
     sequelize,
-    modelName: 'Federal_district',
+    modelName: 'FederalDistrict',
   });
-  return Federal_district;
+  return FederalDistrict;
 };

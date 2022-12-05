@@ -1,10 +1,16 @@
+const { useContext } = require('react');
 const React = require('react');
+const LocalsContext = require('../middlewares/LocalsContext');
 
-function NavBar({ user }) {
+const ButtonForCreate = require('./ButtonForCreate')
+const CreateInitiative = require('./CreateInitiative');
+
+function Navbar() {
+  const { user } = useContext(LocalsContext)
   return (
-    <nav className="navbar navbar-dark navbar-expand-lg bg-primary">
+    <nav className="navbar navbar-dark navbar-expand-lg bg-primary" style={{boxSizing:"border-box"}}>
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">
+        <a className="navbar-brand" href="/">
           Твой вклад
         </a>
         <button
@@ -38,15 +44,17 @@ function NavBar({ user }) {
             )}
             {user && (
               <li className="nav-item">
-                <span className="nav-link">Hello, {user.login}!</span>
+                <a className="nav-link" href="/auth/logout">
+                  Выйти
+                </a>
               </li>
             )}
             {user && (
-              <li className="nav-item">
-                <a className="nav-link" href="/auth/logout">
-                  Logout
-                </a>
-              </li>
+              <span>
+              <ButtonForCreate/>
+              <CreateInitiative/>
+              <script src="/js/createInitiative.js" defer />
+              </span>
             )}
           </ul>
         </div>
@@ -55,4 +63,4 @@ function NavBar({ user }) {
   );
 }
 
-module.exports = NavBar;
+module.exports = Navbar;

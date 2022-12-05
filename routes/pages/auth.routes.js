@@ -1,6 +1,7 @@
 const authRouter = require('express').Router();
 const bcrypt = require('bcrypt');
-const { Sequelize } = require('sequelize');
+
+const {User} = require('../../db/models')
 
 const LoginPage = require('../../views/auth/LoginPage');
 const RegisterPage = require('../../views/auth/RegisterPage');
@@ -9,14 +10,15 @@ authRouter.get('/login', (req, res) => {
   res.renderComponent(LoginPage);
 });
 
-authRouter.get('/login', async (req, res) => {
-  const user = User.findOne({
+authRouter.post('/login', async (req, res) => {
+  console.log(req.body)
+  const user = await User.findOne({
     where: { login: req.body.login },
   });
 
   if (user && (await bcrypt.compare(req.body.password, user.password))) {
     req.session.userId = user.id;
-    res.redirect('/');
+    res.redirect('/')
   }
 });
 
@@ -25,7 +27,7 @@ authRouter.get('/register', async (req, res) => {
 });
 
 authRouter.post('/register', async (req, res) => {
-  const user = User.findOne({
+  const user = await User.findOne({
     where: { login: req.body.login.trim() },
   });
 
@@ -37,10 +39,10 @@ authRouter.post('/register', async (req, res) => {
     return res.status(420).send('Пароли не совпадают');
   }
 
-  const newUser = User.create({
-    fullname: req.body.fullname.trim(),
+  const newUser = await User.create({
+    full_name: req.body.fullname.trim(),
     login: req.body.login.trim(),
-    password: req.body.password.trim(),
+    password: await bcrypt.hash(req.body.password.trim(), 10),
   });
 
   req.session.userId = newUser.id;

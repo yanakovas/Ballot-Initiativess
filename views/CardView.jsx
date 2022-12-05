@@ -4,6 +4,7 @@ module.exports = function CardView ({title,text,level, id}) {
 return (
 <form id='frontForm' data-id={id}>
   <div id="cards">
+=======
     <div className="card center">
       <div className="front">
         <div className="card mb-3" style={{maxWidth: "540px"}}>
@@ -37,4 +38,4 @@ return (
 </div>
 </form>
 )
-}
+

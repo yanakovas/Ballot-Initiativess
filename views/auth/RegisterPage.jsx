@@ -4,7 +4,7 @@ const Layout = require('../Layout');
 function RegisterPage({ user }) {
   return (
     <Layout user={user}>
-      <form id="register-form">
+      <form id="register-form" method='post' action='/auth/register'>
         <div className="mb-3">
           <label htmlFor="InputFullname" className="form-label">
             ФИО
@@ -15,6 +15,7 @@ function RegisterPage({ user }) {
             aria-describedby="loginHelp"
             name="fullname"
             placeholder="Введите ФИО"
+            required
           />
         </div>
         <div className="mb-3">
@@ -27,6 +28,7 @@ function RegisterPage({ user }) {
             aria-describedby="loginHelp"
             name="login"
             placeholder="Введите почту"
+            required
           />
         </div>
         <div className="mb-3">
@@ -39,6 +41,7 @@ function RegisterPage({ user }) {
             id="exampleInputPassword2"
             name="password"
             placeholder="Введите пароль"
+            required
           />
         </div>
         <div className="mb-3">
@@ -51,6 +54,7 @@ function RegisterPage({ user }) {
             id="exampleInputPassword2"
             name="passwordRepeat"
             placeholder="Введите повторно пароль"
+            required
           />
         </div>
         <button type="submit" className="btn btn-primary">
@@ -58,7 +62,6 @@ function RegisterPage({ user }) {
         </button>
       </form>
 
-      <script src="/js/registerPage.js" />
     </Layout>
   );
 }
