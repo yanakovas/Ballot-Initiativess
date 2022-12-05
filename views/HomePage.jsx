@@ -12,7 +12,11 @@ return (
 <Filter />
 <div id='initiatives'>
 {initiatives.map((initiative) => (
+<<<<<<< HEAD
+  <CardView key={initiative.id} title={`${initiative.title}`} text={initiative.text} level={initiative.level} id={initiative.id}/>
+=======
   <CardView key={initiative.id} title={initiative.title} text={initiative.text} level={initiative.level} id = {initiative} />
+>>>>>>> 58f68c4025baa00a5483500781257284245225ef
 ))}
 </div>
 </Layout>
