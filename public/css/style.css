@@ -69,5 +69,8 @@
 
 .success {
     width: 83px;
-  
+}
+
+.buttons {
+    display: flex;
 }

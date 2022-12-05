@@ -14,8 +14,10 @@ return (
                 <p className="card-text">{text}.</p>
                 <p className="card-text"><small className="text-muted">{level}</small></p>
                 <div className="btn-group" role="group" aria-label="Basic mixed styles example">
+                  <div className='buttons'>
                   <button type="submit" name='success' className="btn btn-success success">ЗА</button>
                   <button type="submit" name='against' className="btn btn-danger against">ПРОТИВ</button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -26,7 +28,7 @@ return (
 <div className="back">
   <div className="back-content center">
     <p>
-      Вы проголосовали ЗА
+      Вы проголосовали 
     </p>
     <button className="btn btn-primary">Посмотреть содержимое</button>
   </div>
