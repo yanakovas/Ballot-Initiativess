@@ -1,4 +1,4 @@
-const { sequelize } = require('../models');
+const { sequelize } = require('./models');
 
 // вносит изменения в существующие таблицы
 // либо создаёт их если их нет

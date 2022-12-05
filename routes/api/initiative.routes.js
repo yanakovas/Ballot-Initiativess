@@ -1,6 +1,5 @@
 const initiativeApiRouter = require('express').Router();
 
-const { normalizePluginName } = require('@babel/preset-env/lib/normalize-options');
 const { Initiative } = require('../../db/models');
 
 const CardView = require('../../views/CardView');
@@ -25,35 +24,41 @@ initiativeApiRouter.delete('/:id', async (req, res) => {
 initiativeApiRouter.post('/', async (req, res) => {
   const { userId } = req.session;
 
-  const {title, text, votingDeadline, level} = req.body
-  
+  const { title, text, votingDeadline, level } = req.body;
+
   await Initiative.create({
-    title, text, level, user_id:userId, voting_deadline: votingDeadline,
+    title,
+    text,
+    level,
+    user_id: userId,
+    voting_deadline: votingDeadline,
   });
   // title={initiative.title} text={initiative.text} level={initiative.level}
-  res.renderComponent(CardView, {title, text, level}, {doctype:false})
+  res.renderComponent(CardView, { title, text, level }, { doctype: false });
 });
 
 initiativeApiRouter.put('/id', async (req, res) => {
   const { userId } = req.session;
 
-  const {title, text, votingDeadline, level, id} = req.body
-  
-  const initiative = await Initiative.find({where:{id}});
-  
-  if(!initiative){return res.send('Инициатива не существует')}
-  
-  if(initiative.user_id!==Number(userId)){
-    res.send('Вы не можете удалить чужую инициативу')
+  const { title, text, votingDeadline, level, id } = req.body;
+
+  const initiative = await Initiative.find({ where: { id } });
+
+  if (!initiative) {
+    return res.send('Инициатива не существует');
+  }
+
+  if (initiative.user_id !== Number(userId)) {
+    res.send('Вы не можете удалить чужую инициативу');
   }
 
   Initiative.Update(
-    {title, text, votingDeadline, level, id},
-    {where:{id:initiative.id}}
-  )
-  Initiative.save()
+    { title, text, votingDeadline, level, id },
+    { where: { id: initiative.id } }
+  );
+  Initiative.save();
   // title={initiative.title} text={initiative.text} level={initiative.level}
-  res.json({success:true})
+  res.json({ success: true });
 });
 
 module.exports = initiativeApiRouter;

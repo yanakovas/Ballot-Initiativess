@@ -6,6 +6,7 @@ const ssr = require('../middlewares/ssr');
 const getUser = require('../middlewares/getUser');
 
 const sessionConfig = require('./sessionConfig');
+const getUser = require('../middlewares/getUser');
 
 function expressConfig(app) {
   // плагины - миддлварки
@@ -27,6 +28,7 @@ function expressConfig(app) {
   app.use(getUser);
   
   app.use(ssr);
+  app.use(getUser);
 }
 
 module.exports = expressConfig;

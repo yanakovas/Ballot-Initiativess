@@ -2,7 +2,7 @@ const React = require('react');
 
 function Filter() {
   return (
-    <div>
+    <div className="jopa">
       <h6>Фильтр</h6>
       <select
         className="form-select form-select-sm mb-2"
